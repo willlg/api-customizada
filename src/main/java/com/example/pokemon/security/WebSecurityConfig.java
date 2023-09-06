@@ -38,7 +38,7 @@ public class WebSecurityConfig {
         .cors().and()
         .csrf().disable()
         .authorizeHttpRequests((auth) ->
-         auth.requestMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
+         auth.requestMatchers(HttpMethod.POST, "/api/treinadores").permitAll()
         .anyRequest().authenticated())
         .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilter(new JwtAuthenticationFilter(authenticationManager(authenticationConfiguration), jwtUtil));
